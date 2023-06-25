@@ -1,0 +1,50 @@
+:root { --var-color-grey: #898989; }
+body {
+    margin:0;
+    position:fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    font-family: Helvetica; ;
+}
+
+text {
+    font-family: Helvetica;
+    color: var(--var-color-grey);
+}
+.axis path,
+.axis line {
+    fill: none;
+    stroke: var(--var-color-grey);
+    shape-rendering: crispEdges;
+}
+.x.axis {font-size: 15px;  }
+.y.axis {font-size: 12px; }
+
+.bar {
+    fill: #D593E7B5;
+}
+
+.bar2 {
+    fill: #ffd384;
+}
+
+.bar3 {
+    fill: #85F3E9FC;
+}
+
+.highlight {
+    fill: orange;
+}
+
+.val{
+    fill: black;
+    font-family: 'Open Sans';
+    display: inline-block;
+    padding: .25em 0;
+    background: #FFC107;
+    color: #ffffff;
+    /*font-weight: 'bold';*/
+    font-size: 150%;
+}

@@ -1,0 +1,109 @@
+/*Resourse
+https://online.maryville.edu/blog/evolution-social-media/
+*/
+
+ul {
+    padding: 0 0;
+}
+
+ul li {
+    position:relative;
+    list-style-type: none;
+    width: 1px;
+    background-color: steelblue;
+    margin: 0 auto;
+    padding-top: 0;
+}
+
+ul li::after {
+    border: 10px solid black;
+    border-color: steelblue;
+    background: white;
+    content: '';
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    position:absolute;
+    left:50%;
+    transform: translate(-50%, 80%);
+    bottom: 0;
+}
+
+
+ul li div{
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    padding: 0px;
+    border-radius: 5px;
+    border-color: cadetblue;
+    transform: translateY(100%);
+    bottom: 0;
+    background: lightsteelblue;
+}
+
+ul li div{
+    position: absolute;
+    width: 300px;
+    height: 50%;
+    padding: 0px;
+    border-radius: 5px;
+    border-color: cadetblue;
+    transform: translateY(100%);
+    bottom: 0;
+    background: steelblue;
+}
+
+ul li:nth-child(odd) div {
+    left: 45px;
+    top: 40px;
+}
+
+ul li:nth-child(even) div {
+    left: -345px;
+    top: 40px;
+}
+
+time {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+    margin-bottom: -15%;
+    margin-top: -10%;
+}
+
+ul li div p{
+    font-size: 12px;
+    display: block;
+}
+
+ul li div {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 1.5s ease-in-out;
+}
+
+ul li:nth-child(odd) div {
+    transform: translate3d(200px, 0, 0);
+}
+
+ul li:nth-child(even) div {
+    transform: translate3d(-200px, 0, 0);
+}
+
+ul li.show div {
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+}
+
+@media screen and (max-width: 900px) {
+    ul li div {
+        width: 250px;
+    }
+    ul li:nth-child(even) div {
+        left: -289px;
+        /*250+45-6*/
+    }
+}

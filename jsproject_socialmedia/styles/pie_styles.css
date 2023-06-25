@@ -1,0 +1,13 @@
+.pathpie {
+    /*fill: aliceblue;*/
+    /*stroke-width: 1px;*/
+    /*stroke: #222;*/
+}
+
+.pathpie:hover {
+    fill: red;
+    animation-fill-mode: backwards;
+    stroke-width: 2px;
+    stroke: #000000;
+    stroke-opacity: 1;
+}

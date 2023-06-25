@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main_style.css">
+    <link rel="stylesheet" href="styles/svg_style.css">
+    <link rel="stylesheet" href="styles/map_style.css">
+    <link rel="stylesheet" href="styles/timeline_style.css">
+    <link rel="stylesheet" href="styles/pie_styles.css">
+    <link rel="stylesheet" href="styles/bar_style.css">
+    <title>SocialMediaViz</title>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script>
+        var d3v4 = window.d3;
+        window.d3 = null;
+    </script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="http://benschmidt.org/colorbar/colorbar.js"></script>
+</head>
+<body>
+<!--<h1 class="site-header">-->
+<!--    Posts from today-->
+<!--</h1>-->
+<!--<main id="posts" class="post-list"></main>-->
+<!--<script src="posts.js"></script>-->
+<svg id="social_logos" x ="100" y="100"  height="200" style="position:absolute;z-index:10; right:29.5%; top:0% "> </svg>
+<div id="div_wrapper">
+    <div>
+
+        <a>
+        <text class="title-header" y = "0">Social Media
+            Influence on Online Shopping</text>
+        </a>
+
+
+    </div>
+
+    <div id="svg_InternetUsersMap">
+<!--        <h2 class="svg-header">Worldwide Internet Users</h2>-->
+        <div  width="900" style="position:absolute;z-index:2; right:0">
+<!--            <label for="div_SocialMediaShare">Segment:</label>-->
+                <p x="50" y="650" style="font-size: 45px;z-index:2;font-weight: bold;">&NewLine;27,000</p>
+        </div>
+        <div style="position:absolute;z-index:3; right:0">
+            <!--            <label for="div_SocialMediaShare">Segment:</label>-->
+            <p x="50" y="650" style="font-size:18px;z-index:2;">&NewLine;New &NewLine;&NewLine;&NewLine;users every hour</p>
+
+        </div>
+        <svg id="svgMapInternetUsers" height="900" width="900">
+            <g id="mapLayer"></g>
+            <g id="cityLayer">
+
+<!--                <svg id="cityLayerInternetUsers"></svg>-->
+            </g>
+            <svg id="cityLayerAdMarket" style="z-index:1000;"></svg>
+
+            <text x="400" y="560" fill= steelblue>Source:</text>
+            <a xlink:href="https://ourworldindata.org/internet" target="_blank">
+                <text x="400" y="580" fill= steelblue>OurWorldinData.org</text>
+            </a>
+            <a xlink:href="https://www.statista.com/forecasts/459813/social-media-advertising-revenue-countries-digital-market-outlook">
+                <text x="400" y="600" fill= steelblue>www.statista.com</text>
+            </a>
+
+            <a>
+                <!--            <a xlink:href="https://www.statista.com/topics/990/global-advertising-market/#topicOverview" target="_blank">-->
+                <text x="20" y="640">This map shows the number of people that are using the internet</text>
+                <text x="20" y="660">which in these statistics refers to all those who have used the internet in the last 3 months.</text>
+                <text x="20" y="680">    And the bubbles refer to social media advertising spending (in million U.S. dollars)</text>
+                <text x="20" y="720">    More than 4.74 billion people across the world use social media. </text>
+                <text x="20" y="740">    In 2022, the number of social media users increased by 4.2%.  </text>
+                <text x="20" y="760">    Ad spending on social media it more than $173 billion in 2022. </text>
+                <text x="20" y="780">    The CPM (Customer Per Mile) of social media advertising was $8.15 USD. </text>
+                <text x="20" y="820">    Reference: </text>
+                <text x="20" y="840">    Max Roser, Hannah Ritchie and Esteban Ortiz-Ospina (2015) - "Internet".</text>
+                <text x="20" y="860">    Published online at OurWorldInData.org.</text>
+            </a>
+            <h2 class="svg-header">Market Value Analysis </h2>
+
+
+
+            <div id="svg_linechart" x ="0" y ="0" width="100" height="200" style="position:absolute;z-index:10; right:48%; top:40% ">     <!-- Initialize a select button -->
+
+
+                <g id="linechart_legend"></g>
+
+                <svg id="svg_linechart_legend" style="position:absolute;z-index:0; right:0%; top:30% "></svg>
+                <select x ="100" y="500" id="selectButton" style="position:absolute;z-index:20; left:100%; top:24% "></select>
+            </div>
+        </svg>
+        <svg id="social_logos2" x ="0" y="500" height="500" style="position:absolute;z-index:-10; right:45%; top:66% "> </svg>
+
+
+
+        <div style="position:relative;z-index:10;">
+            <p x="100" y="1500" style="position:absolute;fill: white;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+                Mobile Ad market shows increasing trend
+                    with affordable market reach
+
+                <b>Most downloaded social media apps</b>
+            </p>
+        <svg id="svg_OnlineAdMarket_wrapper"  x ="100" y="100" height="1000" width="1500" style="position:relative;z-index:10;top:10%" >
+
+            <svg id="svg_OnlineAdMarket" x ="150" y="200" height="600" width="700" ></svg> <!--Step 2-->
+            <a>
+                <!--            <a xlink:href="https://www.statista.com/topics/990/global-advertising-market/#topicOverview" target="_blank">-->
+                <text x="400" y="820">Advertising Revenue Worldwide (2021)</text>
+                <text x="400" y="840">(in billion U.S. dollars)</text>
+            </a>
+            <text></text>
+
+            <svg id = "svg_barchart" x ="600" y="300" width="900" height="600" style="position:relative;z-index:100;top:0%"></svg>
+            <a>
+<!--            <a xlink:href="https://www.statista.com/topics/990/global-advertising-market/#topicOverview" target="_blank">-->
+                <text x="800" y="820">Advertising media owners revenue worldwide from 2014 to 2021</text>
+                <text x="800" y="840">(in billion U.S. dollars)</text>
+            </a>
+            <a xlink:href="https://www.statista.com/topics/990/global-advertising-market/#topicOverview" target="_blank">
+                <text x="280" y="800" fill= steelblue>Source: statista.com - Advertising worldwide - statistics & facts</text>
+            </a>
+            <a xlink:href="https://www.statista.com/statistics/205352/digital-advertising-revenue-of-leading-online-companies/" target="_blank">
+                <text x="800" y="800" fill= steelblue>Source: statista.com - Digital Advertising Revenue</text>
+            </a>
+        </svg>
+        </div>
+
+
+    </div>
+
+    <div  x ="0" y="0" width="100" style="position:absolute;z-index:10; right:16%; top:8.2%">
+
+        <label for="div_SocialMediaShare"></label>
+        <select id="div_SocialMediaShare" name="div_SocialMediaShare"  y ="100"  width="100"></select>
+    </div>
+    <text x="0" y="0"  style="position:absolute; color: black; font: 14px sans-serif;text-anchor: start;white-space: pre-wrap;top:8%;">
+        The bubble chart shows the survey response for segment
+<!--        <b>What social platform-->
+<!--            has influenced your online shopping most?</b>-->
+    </text>
+    <text x="0" y="0"  style="position:absolute; color: dimgray; font: 25px sans-serif;text-anchor: start;white-space: pre-wrap;top:6.8%;right:20%;">
+<!--        The bubble chart shows the survey-->
+<!--        response for segment-->
+        <b>What social platform is influencing
+            the Online Shopping?</b>
+    </text>
+    <text x="0" y="0"  style="position:absolute;color: black; font: 12px sans-serif;text-anchor: end;white-space: pre-wrap;top:12.5%;right:0%;">
+        *bubble chart x axis is a selected based on segment,
+        while y axis is always the opposite of x for the selected segment (values on the bubbles)
+    </text>
+    <svg id="socialspace_select"  width="700" height="500" style="position:absolute;top:13%; right:2%;">
+        <g id="socialspace" width="900" height="300">
+            <g id="socialspaceaxis" transform="translate(0,30)">
+
+            </g>
+            <g id="socialspaceaxisY" transform="translate(0,30)">
+
+            </g>
+            <!--                    <div id="div_SocialMediaShare"></div>-->
+        </g>
+    </svg>
+
+   <!--<div id="thi                                                rd"></div>-->
+    <div id="svg_TimeLine" style="position:absolute;top:20%;right:20%">
+        <!--    <h1 class="svg-header">Javascript Vertical Timeline</h1>-->
+        <ul>
+            <li>
+                <div>
+                    <time>1960s Email</time>
+                    <p>The first example of email can be found on computers at MIT in a program called “MAILBOX”, all the way back in 1965. Users of MIT computers could leave messages with this program on computers at the university for other users, who would see the messages the next time they logged on to the computer. </p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>1970s File sharing</time>
+                    <p>Files were first exchanged on removable media. Computers were able to access remote files using filesystem mounting, bulletin board systems (1978), Usenet (1979), and FTP servers (1970's). Internet Relay Chat (1988) and Hotline (1997) enabled users to communicate remotely through chat and to exchange files.</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>1982 TCP/IP</time>
+                    <p>TCP/IP was standardized. TCP/IP was developed in the 1970s and adopted as the protocol standard for ARPANET (the predecessor to the Internet) in 1983. It is the set of communications protocols used for the Internet and other similar networks.</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>1989 World Wide Web</time>
+                    <p>By December 1990, Berners-Lee and his work team had built all the tools necessary for a working Web: the HyperText Transfer Protocol (HTTP), the HyperText Markup Language (HTML), the first web browser (named WorldWideWeb, which was also a web editor), the first web server (later known as CERN httpd) and the first web site (http://info.cern.ch) containing the first web pages that described the project itself was published on 20 December 1990.</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>1990 Website</time>
+                    <p>first web browser and website launched. The first website at CERN – and in the world – was dedicated to the World Wide Web project itself and was hosted on Berners-Lee's NeXT computer. In 2013, CERN launched a project to restore this first ever website: info.cern.ch. On 30 April 1993, CERN put the World Wide Web software in the public domain.</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>2000s Social Media</time>
+                    <p>Begins with the short-lived Six Degrees profile uploading service in 1997, and followed in 2001 by Friendster. These rudimentary platforms attracted millions of users and enabled email address registration and basic online networking. Weblogs, or blogs, another early form of digital social communication, began to gain popularity with the 1999 launch of the LiveJournal publishing site. This coincided with the launch of the Blogger publishing platform by the tech company Pyra Labs, which was purchased by Google in 2003.</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>2007 Facebook marketplace </time>
+                    <p>Facebook shops are the new way to shop online. With more than 2.89 billion monthly active users, brands are taking advantage of the traffic it brings. The Facebook marketplace started in 2007, expanding on the first 'Buy Button' launched in 2014. But, they didn't stop there. Instead, they saw the potential of e-commerce and opened the platform for user-direct selling in 2018.
+<!--                       It allowed business owners to start their shops on their pages and reach more people and communities than on other media. These in-app stores allow you to purchase items directly from your Facebook account without leaving the platform. The pandemic paved the way for the platform to the top. Facebook eventually acquired Instagram and Whatsapp, expanding its potential market even more.-->
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>2015 Instagram "Shop Now"</time>
+                    <p>Instagram is also a platform that is constantly changing and evolving. Acquired by Facebook last 2012 for $1 billion, it now contributes a staggering $20 billion in revenue to its parent company. It started with a simple CTA "Shop Now" button in 2015. It continued development with the complete Instagram shopping platform in 2018.
+<!--                        Instagram allows retailers to reach a wider audience and increase their sales through photo and video content. But according to Instagram's CEO, "we're no longer a photo-sharing app." Instead, with full functionality and recent updates to keep up with other social media giants, Instagram has integrated with different e-commerce platforms like Bigcommerce and Shopify.-->
+<!--                        To stay competitive, Instagram adapts to the changes and flexibility. One example is the recent 'Reel' feature in competition with Tiktok.-->
+                    </p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <time>TikTok</time>
+                    <p>Tiktok is a platform that has become popular among the younger generation. It's a video-sharing application that allows users to create and share short videos, often called "Tiktok" videos, which can be about anything from makeup tutorials to cooking. In 2021, TikTok generated $4 billion in advertising revenue. Analysts project the platform's income will increase to about $13.8 billion by 2026.
+<!--                        Many small businesses have also adopted the platform as an effective way to reach younger consumers. They are more likely to buy products online than older people.-->
+
+<!--                        TikTok offers an opportunity for small businesses to reach out to customers through its partnerships with companies like Uniqlo, Nike, and Calvin Klein. In addition, they recently partnered with Publicis Groupe to launch a new "Community Commerce" feature, allowing brands to test demand for their products.-->
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+
+
+
+<!--    <div id="div_wrapper2" x ="0" y="0" width="500" height="600"> <span id="d3v4VarVer"></span>-->
+        <!-- Create a div where the graph will take place -->
+<!--    </div>-->
+</div>
+
+
+<!--<div id="div_SocialMediaShare">-->
+<!--    &lt;!&ndash; Create a div where the circle will take place &ndash;&gt;-->
+<!--    <div id="dataviz_builtWithD3"></div>-->
+<!--&lt;!&ndash;    <svg id="svg_SocialMediaShare">     &lt;!&ndash; Initialize a select button &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;    </svg>&ndash;&gt;-->
+<!--</div>-->
+
+
+<!--&lt;!&ndash; Add a slider &ndash;&gt;-->
+<!--<input type="range" name="mySlider" id=mySlider min="10" max="100" value="50">-->
+<!--&lt;!&ndash; Create a div where the graph will take place &ndash;&gt;-->
+<!--<div id="my_dataviz"></div>-->
+
+
+
+
+
+<!-- bar chart -->
+<!--<div id="bar_chart"></div>-->
+
+
+
+
+</body>
+
+
+
+<script>
+    myScale = d3.scale.linear().range(["red","white","blue"]).domain([0,4,25])
+
+    colorbar = Colorbar()
+        .origin([15,60])
+        .scale(myScale)
+        .orient("vertical")
+
+    placeholder = "#colorbar-here"
+
+    colorbarObject = d3.select(placeholder)
+        .call(colorbar)
+
+</script>
+
+<!--Timeline animation-->
+<script>
+    var items = document.querySelectorAll("li");
+
+    function isItemInView(item){
+        var rect = item.getBoundingClientRect();
+        return (
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+    }
+
+    function callbackFunc() {
+        for (var i = 0; i < items.length; i++) {
+            if (isItemInView(items[i])) {
+                items[i].classList.add("show");
+            }
+        }
+    }
+
+    // listen for events
+    window.addEventListener("load", callbackFunc);
+    window.addEventListener("resize", callbackFunc);
+    window.addEventListener("scroll", callbackFunc);
+</script>
+
+<!--    internet user online map-->
+<script src="scripts/InternetUsersMap.js"></script>
+<!--    internet user online map-->
+<script type="text/javascript"> InternetUsersMap();</script>
+
+<!--pie chart online ad market-->
+<script src="scripts/marketsharePieChart.js"></script>
+
+<!-- bar chart -->
+<!--<script src="scripts/bar_chart.js"></script>-->
+
+<script src="scripts/barchart_d3v4.js"></script>
+
+<script src="scripts/linechart_d3v4.js"></script>
+
+<script src="scripts/piechartlist.js"></script>
+
+<!--<script src="scripts/kernalplot.js"></script>-->
+
+</html>

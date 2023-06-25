@@ -1,0 +1,103 @@
+*, html, body{
+    padding:10px;
+    margin:10px;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+    perspective:1000px;
+    scroll-behavior: smooth;
+}
+
+/*.hover{stroke: #ff0000; fill-opacity: .8;}*/
+.title-header {
+    color: steelblue;
+    font-size: xxx-large;
+    position: absolute;
+    text-align: left;
+    margin: 20pt;
+    width: 50%;
+    white-space: pre-wrap;
+}
+
+.site-header {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    background-color: #fff;
+}
+
+body{
+    background-color:#2270;
+    width:100%;
+    min-height:100vh;
+    /*display:flex;*/
+    /*justify-content:left;*/
+    /*align-items:center;*/
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 1%;
+    padding: 1%;
+}
+
+
+
+@media only screen and (max-width: 1200px) {
+    .post-list {
+        padding: 0 10vw;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .post-list {
+        padding: 0 2vw;
+    }
+}
+
+#div_wrapper {
+    max-width: 90%;
+    /*border: 1px solid black;*/
+    overflow: auto; /* add this to contain floated children */
+}
+
+#div_wrapper2 {
+    max-width: 90%;
+    /*border: 1px solid black;*/
+    overflow: auto; /* add this to contain floated children */
+}
+
+/*path {*/
+/*    fill: transparent;*/
+/*    stroke-width: 1px;*/
+/*    stroke: #222;*/
+/*}*/
+
+path:hover {
+    fill: orange;
+    animation-fill-mode: backwards;
+    stroke-width: 3px;
+    stroke: #000000;
+    stroke-opacity: 1;
+    /*background: repeating-linear-gradient( 45deg, #444cf7, #444cf7 5px, #e5e5f7 5px, #e5e5f7 25px );*/
+}
+
+
+
+
+mark {
+    -webkit-animation: 1.5s highlight 1.5s 1 normal forwards;
+    animation: 1.5s highlight 1.5s 1 normal forwards;
+    background-color: none;
+    background: linear-gradient(90deg, steelblue 50%, rgba(255, 255, 255, 0) 50%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+}
+
+@-webkit-keyframes highlight {
+    to {
+        background-position: 0 0;
+    }
+}
+
+@keyframes highlight {
+    to {
+        background-position: 0 0;
+    }
+}
