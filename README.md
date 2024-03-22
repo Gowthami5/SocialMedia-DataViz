@@ -1,5 +1,5 @@
 # SocialMedia DataViz
- Visulaisation of social media data influencing online shopping
+ Visualization of social media data influencing online shopping
 
 We have used the Data Driven Document (d3.js [23]) library to implement the conceptual designs to communicate some important trends that unlocked the potential of social media as a highly influencing shopping platform. 
 
